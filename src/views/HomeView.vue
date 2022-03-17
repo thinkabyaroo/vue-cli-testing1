@@ -12,7 +12,7 @@
       </div>
       <div class="col-4 mx-3">
         <ul class="list-group">
-         <List v-for="list in lists" :key="list.id" :list-item="list"></List>
+         <List v-for="list in lists" @change-status="run" :key="list.id" :list-item="list"></List>
 
         </ul>
       </div>
@@ -40,7 +40,17 @@ export default {
           title:"hi",
           isDone:"false"
         },
+        {
+          id:3,
+          title:"ohiyoo",
+          isDone:"true"
+        },
       ]
+    }
+  },
+  methods: {
+    run() {
+      console.log('hello')
     }
   },
 }
