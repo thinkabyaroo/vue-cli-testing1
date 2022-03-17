@@ -49,8 +49,8 @@ export default {
     }
   },
   methods: {
-    run() {
-      console.log('hello')
+    run(id) {
+      console.log(id)
     }
   },
 }

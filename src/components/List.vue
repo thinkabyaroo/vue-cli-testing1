@@ -3,7 +3,7 @@
     {{titleToUppet}}
     <div class="">
       <div class="form-check form-switch">
-        <input class="form-check-input" type="checkbox" @change="$emit('changeStatus')" role="switch" v-model="isDone" :id="'job'+listItem.id">
+        <input class="form-check-input" type="checkbox" @change="$emit('changeStatus',listItem.id)" role="switch" v-model="isDone" :id="'job'+listItem.id">
         <label class="form-check-label" :for="'job'+listItem.id"></label>
       </div>
     </div>
