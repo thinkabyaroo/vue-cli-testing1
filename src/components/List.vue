@@ -3,8 +3,8 @@
     {{titleToUppet}}
     <div class="">
       <div class="form-check form-switch">
-        <input class="form-check-input" type="checkbox" role="switch" v-model="isDone" :id="'job'+listId">
-        <label class="form-check-label" :for="'job'+listId"></label>
+        <input class="form-check-input" type="checkbox" role="switch" v-model="isDone" :id="'job'+listItem.id">
+        <label class="form-check-label" :for="'job'+listItem.id"></label>
       </div>
     </div>
 
@@ -14,24 +14,19 @@
 <script>
 export default {
   props: {
-    title: {
-      type: String,
-      default: "Default"
-    },
-    listId:{
-      type:String,
-      require:true
-    }
+   listItem:{
+     type:Object
+   }
   },
   data() {
     return {
       count: 0,
-      isDone:true,
+      isDone:this.listItem.isDone,
     }
   },
   computed: {
     titleToUppet() {
-      return this.title.toUpperCase();
+      return this.listItem.title.toUpperCase();
     }
   },
   methods: {

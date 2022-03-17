@@ -12,7 +12,7 @@
       </div>
       <div class="col-4 mx-3">
         <ul class="list-group">
-         <List v-for="list in lists" :key="list.id" :title="list.title" :list-id="list.id"></List>
+         <List v-for="list in lists" :key="list.id" :list-item="list"></List>
 
         </ul>
       </div>
@@ -33,10 +33,12 @@ export default {
         {
           id:1,
           title:"hello",
+          isDone:"true"
         },
         {
           id:2,
           title:"hi",
+          isDone:"false"
         },
       ]
     }
