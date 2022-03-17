@@ -2,7 +2,7 @@
   <li class="list-group-item d-flex justify-content-between">
     <div class="" @dblclick="edit">
       <span v-if="isEdit">
-      <input type="text" class="form-control" v-model="listItem.title">
+      <input type="text" class="form-control" @keyup.enter="update" v-model="listItem.title">
     </span>
       <span v-else>
           {{titleToUppet}}
@@ -30,7 +30,7 @@ export default {
     return {
       count: 0,
       isDone:this.listItem.isDone,
-      isEdit:true
+      isEdit:false
     }
   },
   computed: {
@@ -44,6 +44,11 @@ export default {
     },
     edit(){
       this.isEdit= !this.isEdit;
+    },
+    update(){
+      this.$emit('updateTile',)
+
+      this.isEdit = false;
     }
   },
 }

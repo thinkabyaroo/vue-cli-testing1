@@ -56,7 +56,15 @@ export default {
         }
         return el;
       })
-    }
+    },
+    // updateTitle(id,title) {
+    //   this.lists=this.lists.map(el=>{
+    //     if(el.id === id){
+    //       el.isDone = !el.isDone
+    //     }
+    //     return el;
+    //   })
+    // }
   },
 }
 </script>
