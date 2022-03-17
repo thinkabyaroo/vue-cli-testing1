@@ -12,7 +12,7 @@
       </div>
       <div class="col-4 mx-3">
         <ul class="list-group">
-         <List v-for="list in lists" :key="list.id" :title="list.title"></List>
+         <List v-for="list in lists" :key="list.id" :title="list.title" :list-id="list.id"></List>
 
         </ul>
       </div>

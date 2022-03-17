@@ -1,11 +1,11 @@
 <template>
   <li class="list-group-item d-flex justify-content-between">
-    {{title}}
+    {{titleToUppet}}
     <div class="">
-      <button class="btn btn-sm btn-primary me-2" @click="countIncrement">+</button>
-      <span>
-        {{count}}
-      </span>
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" role="switch" v-model="isDone" :id="'job'+listId">
+        <label class="form-check-label" :for="'job'+listId"></label>
+      </div>
     </div>
 
   </li>
@@ -18,15 +18,20 @@ export default {
       type: String,
       default: "Default"
     },
+    listId:{
+      type:String,
+      require:true
+    }
   },
   data() {
     return {
-      count: 0
+      count: 0,
+      isDone:true,
     }
   },
   computed: {
-    title() {
-      return this.data 
+    titleToUppet() {
+      return this.title.toUpperCase();
     }
   },
   methods: {
