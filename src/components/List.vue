@@ -1,6 +1,14 @@
 <template>
   <li class="list-group-item d-flex justify-content-between">
-    {{titleToUppet}}
+    <div class="" @dblclick="edit">
+      <span v-if="isEdit">
+      <input type="text" class="form-control" v-model="listItem.title">
+    </span>
+      <span v-else>
+          {{titleToUppet}}
+    </span>
+    </div>
+
     <div class="">
       <div class="form-check form-switch">
         <input class="form-check-input" type="checkbox" @change="$emit('changeStatus',listItem.id)" role="switch" v-model="isDone" :id="'job'+listItem.id">
@@ -22,6 +30,7 @@ export default {
     return {
       count: 0,
       isDone:this.listItem.isDone,
+      isEdit:true
     }
   },
   computed: {
@@ -32,6 +41,9 @@ export default {
   methods: {
     countIncrement() {
       this.count++;
+    },
+    edit(){
+      this.isEdit= !this.isEdit;
     }
   },
 }

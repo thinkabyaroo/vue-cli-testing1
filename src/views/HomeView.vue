@@ -50,7 +50,12 @@ export default {
   },
   methods: {
     run(id) {
-      console.log(id)
+      this.lists=this.lists.map(el=>{
+        if(el.id === id){
+          el.isDone = !el.isDone
+        }
+        return el;
+      })
     }
   },
 }
